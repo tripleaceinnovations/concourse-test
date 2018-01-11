@@ -1,0 +1,54 @@
+---
+resources:
+
+ - name: private-image
+   type: docker-image
+   source:
+     repository: rbekker87/private:flask-basic
+     username: ((dockerhub_user))
+     password: ((dockerhub_pass))
+
+ - name: main-repo
+   type: git
+   source:
+     uri: git@github.com:ruanbekker.com/concourse-test.git
+     branch: master
+     private_key: ((github_key))
+
+ - name: version
+   type: semver
+   source:
+     driver: git
+     uri: git@github.com:ruanbekker/concourse-test.git
+     private_key: ((github_key))
+     file: version
+     branch: version
+     
+jobs:
+ - name: deploy
+   plan: 
+    - get: private-repo
+    - get: main-repo
+    - get: version
+      trigger: true
+    - task: deploy
+      params: 
+        DOCKERHUB_USER: ((dockerhub_user))
+        DOCKERHUB_PASS: ((dockerhub_pass))
+      config:
+        platform: linux
+        image_resource: 
+          type: docker-image
+          source: 
+            repository: rbekker87/private
+            tag: flask-basic
+            username: ((dockerhub_user))
+            password: ((dockerhub_pass))
+        inputs:
+         - name: main-repo
+        run:
+          path: /bin/sh
+          args:
+          - -c
+          - |
+            ./main-repo/ci/scripts/runner.sh
