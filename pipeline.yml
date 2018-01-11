@@ -11,5 +11,5 @@ jobs:
   public: true
   plan:
   - get: my-git-repo
-  - task: hello-world
+  - task: task_print-hello-world
     file: my-git-repo/ci/task-hello-world.yml 
