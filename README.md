@@ -44,6 +44,16 @@ hello world
 succeeded
 ```
 
+See the Output on the Terminal for a Job:
+
+```
+$ fly -t tutorial watch -j pipeline-01/hello-world-job
+initializing
+running echo hello world
+hello world
+succeeded
+```
+
 Build Status:
 
 ```
