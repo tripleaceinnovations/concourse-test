@@ -69,3 +69,9 @@ id  pipeline/job                    build  status     start                     
 25  one-off                         n/a    succeeded  2018-01-10@13:38:45+0200  2018-01-10@13:38:51+0200  6s
 24  one-off                         n/a    errored    2018-01-10@12:56:05+0200  2018-01-10@12:56:10+0200  5s
 ```
+
+Delete Pipeline:
+
+```
+$ fly -t tutorial dp -p hello-pipeline
+```
