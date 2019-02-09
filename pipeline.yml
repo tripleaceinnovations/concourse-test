@@ -6,10 +6,10 @@ resources:
     uri: https://github.com/ruanbekker/concourse-test
     branch: basic-helloworld
 
-- name: resource-app
+- name: application-repo
   type: git
   source:
-    uri: https://github.com/ruanbekker/flask-reminders
+    uri: https://github.com/cloudfoundry-community/simple-go-web-app
 
 jobs:
 - name: hello-world-job
