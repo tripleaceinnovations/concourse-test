@@ -11,6 +11,7 @@ jobs:
   public: true
   plan:
   - get: my-git-repo
+    trigger: true
   - task: task_print-hello-world
     file: my-git-repo/ci/task-hello-world.yml 
 
@@ -18,5 +19,6 @@ jobs:
   public: true
   plan:
   - get: my-git-repo
+    trigger: true
   - task: task_run-linux-task
     file: my-git-repo/ci/task-run-uname.yml
