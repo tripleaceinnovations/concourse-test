@@ -9,7 +9,7 @@ resources:
 - name: application-repo
   type: git
   source:
-    uri: https://github.com/cloudfoundry-community/simple-go-web-app
+    uri: https://github.com/ruanbekker/flask-remote-ip
 
 jobs:
 - name: hello-world-job
