@@ -7,8 +7,9 @@ image_resource:
 
 inputs:
 - name: my-git-repo
-  path: ci/
+- name: resource-app
+  path: gopath/src/github.com/cloudfoundry-community/simple-go-web-app
 
 run:
-  path: uname
-  args: [-a]
+  path: cat
+  args: [app.py]
