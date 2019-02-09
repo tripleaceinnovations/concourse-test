@@ -6,6 +6,11 @@ resources:
     uri: https://github.com/ruanbekker/concourse-test
     branch: basic-helloworld
 
+- name: resource-app
+  type: git
+  source:
+    uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
+
 jobs:
 - name: hello-world-job
   public: true
