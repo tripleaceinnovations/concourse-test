@@ -5,6 +5,11 @@ image_resource:
   type: docker-image
   source: {repository: alpine}
 
+inputs:
+- name: resource-tutorial
+- name: resource-app
+  path: /tmp
+
 run:
   path: uname
   args: [-a]
