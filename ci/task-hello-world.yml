@@ -7,5 +7,10 @@ image_resource:
     repository: busybox
 
 run:
-  path: echo
-  args: ["new message"]
+  path: sh
+  args:
+  - -exc
+  - |
+    cd /tmp/
+    echo "ok" > file.txt
+    cat file.txt
