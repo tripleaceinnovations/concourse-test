@@ -24,7 +24,7 @@ jobs:
   public: true
   plan:
   - get: my-git-repo
-  - get: resource-app
+  - get: application-repo
     trigger: true
   - task: task_run-linux-task
     file: my-git-repo/ci/task-run-uname.yml
