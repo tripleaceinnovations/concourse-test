@@ -11,4 +11,4 @@ inputs:
   path: /tmp
 
 run:
-  path: chmod +x my-git-repo/ci/task_run_tests.sh && ./my-git-repo/ci/task_run_tests.sh
+  path: /usr/bin/find .
