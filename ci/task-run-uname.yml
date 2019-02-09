@@ -6,8 +6,7 @@ image_resource:
   source: {repository: alpine}
 
 inputs:
-- name: resource-tutorial
-- name: resource-app
+- name: my-git-repo
   path: ci/
 
 run:
