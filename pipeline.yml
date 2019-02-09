@@ -28,3 +28,36 @@ jobs:
     trigger: true
   - task: task_run-linux-task
     file: my-git-repo/ci/task-run-uname.yml
+
+- name: job-pass-files
+  public: true
+  plan:
+  - get: my-git-repo
+  - task: create-some-files
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+
+      inputs:
+      - name: my-git-repo
+      outputs:
+      - name: some-files
+
+      run:
+        path: my-git-repo/ci/create_some_files.sh
+
+  - task: show-some-files
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+
+      inputs:
+      - name: my-git-repo
+      - name: some-files
+
+      run:
+        path: my-git-repo/ci/show_files.sh
