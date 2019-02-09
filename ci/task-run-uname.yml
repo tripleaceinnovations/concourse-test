@@ -8,7 +8,7 @@ image_resource:
 inputs:
 - name: resource-tutorial
 - name: resource-app
-  path: /tmp
+  path: ci/
 
 run:
   path: uname
