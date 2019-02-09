@@ -1,15 +1,14 @@
 #!/bin/sh
 
-set -e # fail fast
-set -x # print commands
+set -ex 
 
-git clone resource-gist updated-gist
+git clone my-rw-git-repo updated-gist
 
 cd updated-gist
 echo $(date) > bumpme
 
-git config --global user.email "nobody@concourse-ci.org"
-git config --global user.name "Concourse"
+git config --global user.email "ruan.ru.bekker@gmail.com"
+git config --global user.name "Ruan Bekker"
 
 git add .
 git commit -m "Bumped date"
