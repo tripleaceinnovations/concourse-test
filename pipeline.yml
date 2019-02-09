@@ -13,3 +13,10 @@ jobs:
   - get: my-git-repo
   - task: task_print-hello-world
     file: my-git-repo/ci/task-hello-world.yml 
+
+- name: linux-task
+  public: true
+  plan:
+  - get: my-git-repo
+  - task: task_run-linux-task
+    file: my-git-repo/ci/task-run-uname.yml
