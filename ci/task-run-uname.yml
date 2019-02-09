@@ -8,8 +8,7 @@ image_resource:
 inputs:
 - name: my-git-repo
 - name: resource-app
-  path: gopath/src/github.com/cloudfoundry-community/simple-go-web-app
+  path: /tmp
 
 run:
-  path: cat
-  args: [app.py]
+  path: my-git-repo/ci/task_run_tests.sh
