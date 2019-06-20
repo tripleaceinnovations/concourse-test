@@ -12,4 +12,4 @@ jobs:
   plan:
   - get: mygithubrepo
   - task: helloworldtask
-    file: mygithubrepo/ci/task-hello-world.yml
+    file: mygithubrepo/ci/helloworldtask.yml
