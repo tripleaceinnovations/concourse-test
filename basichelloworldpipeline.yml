@@ -1,0 +1,15 @@
+---
+resources:
+- name: mygithubrepo
+  type: git
+  source:
+    uri: https://github.com/tripleaceinnovations/concourse-test.git
+    branch: basic-helloworld
+
+jobs:
+- name: helloworldjob
+  public: true
+  plan:
+  - get: mygithubrepo
+  - task: helloworldtask
+    file: mygithubrepo/ci/task-hello-world.yml
