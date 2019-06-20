@@ -7,5 +7,4 @@ image_resource:
     repository: python
 
 run:
-  path: echo
-  args: ["hello world"]
+  path: test.py
