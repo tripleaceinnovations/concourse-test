@@ -7,4 +7,4 @@ image_resource:
     repository: python
 
 run:
-  path: test.py
+  path: python3 test.py
