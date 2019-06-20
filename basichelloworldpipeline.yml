@@ -4,7 +4,7 @@ resources:
   type: git
   source:
     uri: https://github.com/tripleaceinnovations/concourse-test.git
-    branch: basic-helloworld
+    branch: master
 
 jobs:
 - name: helloworldjob
